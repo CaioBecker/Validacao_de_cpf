@@ -1,4 +1,4 @@
-fim = 'https://www.google.com/search?q=answer+to+life+the+universe+and+everything&oq=answer+&aqs=chrome.5.69i57j0i433i512j0i512j0i131i433i512l2j0i512j0i131i433i512j0i512l3.8595j0j4&sourceid=chrome&ie=UTF-8'
+fim = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
 while fim != 'fim':
     # Variaveis
     parametros = ".-qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM!@#$%^&*()_=+{}[]|'';:/?>,<`~"
