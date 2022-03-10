@@ -62,7 +62,7 @@ while fim != 'fim':
     else:
         print('Cpf invalido')
 
-#Perguntar se o usuario vai querer fazer outra validacao
+    #Perguntar se o usuario vai querer fazer outra validacao
     while pergunta_fim == 0:
         outra_vez = input('Voce quer validar outro cpf? ')
         if outra_vez[0] == 'S' or outra_vez[0] == 's':
@@ -71,6 +71,7 @@ while fim != 'fim':
             pergunta_fim = 1
             fim = 'fim'
         elif outra_vez == 'jogo da velha':
+            #Um easter egg
             def menu():
                 continuar = 1
                 while continuar:
@@ -80,7 +81,6 @@ while fim != 'fim':
                         game()
                     else:
                         print("Saindo...")
-
 
             def game():
                 jogada = 0
@@ -104,7 +104,6 @@ while fim != 'fim':
                         print("Jogador ", jogada % 2 + 1, " ganhou apos ", jogada + 1, " rodadas")
 
                     jogada += 1
-
 
             def ganhou():
                 # checando linhas
