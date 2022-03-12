@@ -1,4 +1,4 @@
-fim = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+fim = 'https://www.google.com/search?q=answer+to+life+the+universe+and+everything&oq=answer+&aqs=chrome.5.69i57j0i433i512j0i512j0i131i433i512l2j0i512j0i131i433i512j0i512l3.8595j0j4&sourceid=chrome&ie=UTF-8'
 while fim != 'fim':
     # Variaveis
     parametros = ".-qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM!@#$%^&*()_=+{}[]|'';:/?>,<`~"
@@ -11,6 +11,21 @@ while fim != 'fim':
     resultado = 0
     pergunta_fim = 0
     certo = 'not ok'
+    
+    #Funcoes
+    def conta(cpf):
+        global cpf_separado
+        valor = 1 + len(cpf)
+        resultado = 0
+        for z in cpf:
+            resultado += int(z) * valor
+            valor -= 1
+        if len(cpf) == 8:
+            num1 = 11 - (resultado % 11)
+            cpf_separado.insert(9, num1)
+        else:
+            num2 = 11 - (resultado % 11)
+            cpf_separado.insert(10, num2)
 
     #Validar se o usuario vai digitar certo
     while certo != 'ok':
@@ -36,26 +51,13 @@ while fim != 'fim':
             num_valida.insert(num, cpf[indice])
             indice += 1
             num += 1
-
-    #Primeiro calculo
-    for z in cpf_separado:
-        resultado += int(z) *conta
-        conta -= 1
-    num1 = 11 - (resultado % 11 )
-    cpf_separado.insert(9, num1)
-    resultado = 0
-    conta = 11
-
-    #Segundo calculo
-    for w in cpf_separado:
-        resultado += int(w) *conta
-        conta -= 1
-    num2 = 11-( resultado % 11)
-    cpf_separado.insert(10, num1)
+    #Contas
+    conta(cpf_separado)
+    conta(cpf_separado)
 
     #Validacao
-    if int(num_valida[0]) == num1:
-        if int(num_valida[1]) == num2:
+    if int(num_valida[0]) == cpf_separado[9]:
+        if int(num_valida[1]) == cpf_separado[10]:
             print('Tudo certo, este cpf esta certo')
         else:
             print('Cpf invalido')
