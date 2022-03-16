@@ -1,4 +1,7 @@
 fim = 'https://www.google.com/search?q=answer+to+life+the+universe+and+everything&oq=answer+&aqs=chrome.5.69i57j0i433i512j0i512j0i131i433i512l2j0i512j0i131i433i512j0i512l3.8595j0j4&sourceid=chrome&ie=UTF-8'
+
+import webbrowser
+
 while fim != 'fim':
     # Variaveis
     parametros = ".-qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM!@#$%^&*()_=+{}[]|'';:/?>,<`~"
@@ -11,7 +14,7 @@ while fim != 'fim':
     resultado = 0
     pergunta_fim = 0
     certo = 'not ok'
-    
+
     #Funcoes
     def conta(cpf):
         global cpf_separado
@@ -72,6 +75,11 @@ while fim != 'fim':
         elif outra_vez[0] == 'N' or outra_vez[0] == 'n':
             pergunta_fim = 1
             fim = 'fim'
+        elif outra_vez == 'video':
+            new = 2
+            url = "youtube.com/watch?v=dQw4w9WgXcQ"
+            webbrowser.get('C:/Program Files/Google/Chrome/Application/chrome.exe %s').open(url)
+
         elif outra_vez == 'jogo da velha':
             #Um easter egg
             def menu():
